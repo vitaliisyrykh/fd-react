@@ -1,6 +1,12 @@
-'use strict';
+"use strict";
 
-const root = document.getElementById('root');
-const reactElement = React.createElement('h1',{title: 'hello'}, 'hello react.js');
 
-ReactDOM.render(reactElement, root);
+
+class Heading extends React.Component {
+  render() {
+    const {title}= this.props;
+    return React.createElement("h1", { title:title }, "hello react.js");
+  }
+};
+const reactElement = React.createElement(Heading,{title:'bye bye'})
+ReactDOM.render(reactElement, document.getElementById("root"));
