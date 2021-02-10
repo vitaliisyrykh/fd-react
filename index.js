@@ -15,7 +15,7 @@ class Heading extends React.Component {
   decrement = () => {
     if(this.state.counter > 0){
     this.setState({ counter: this.state.counter -1  });
-    }this.state.counter = 0; 
+    }return;
   };
 
   render() {
@@ -30,7 +30,7 @@ class Heading extends React.Component {
         "-"),
         React.createElement("button", {onClick: this.increment}, "+")
       )
-    ;
+    
   }
 }
 const reactElement = React.createElement(Heading, { title: "bye bye" });
