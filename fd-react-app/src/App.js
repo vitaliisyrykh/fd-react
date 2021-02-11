@@ -1,20 +1,44 @@
 import React from 'react';
 import './App.css';
-import Greeting from './components/greeting';
+import Aloha from './components/aloha-dashboard/index'
 
 
 class App extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+       users :[
+        {
+          id: 1,
+          name: 'John',
+          lastName: 'Snow',
+        },
+        {
+          id: 2,
+          name: 'John',
+          lastName: 'Snow',
+        },
+        {
+          id: 3,
+          name: 'John',
+          lastName: 'Snow',
+        },
+        {
+          id: 4,
+          name: 'John',
+          lastName: 'Snow',
+        },
+  
+      ],
+    };
+  };
   render() {
-    const user ={
-      name: 'John',
-      photo: 'http://localhost:3000/favicon.ico',
-    }
+    const {users} = this.state;
     return (
-      <div className="App">
-        <Greeting name={user.name} photo={user.photo}/>
-        <Greeting name={user.name} textContent='aloha guys'/>
-      </div>
-    );
+      <>
+        <Aloha users={users}/>
+      </>
+    )
   }
 }
 
