@@ -15,10 +15,10 @@ class Greeting extends Component {
   
   render(){
     
-    const {name, children} = this.props;
+    const {fistname,lastName, children} = this.props;
     return (
       <div className='GreetingElement'>
-        <h1 className='heading' onClick={this.switch}> hello {name}</h1>
+        <h1 className='heading' onClick={this.switch}> hello {lastName}</h1>
         {children}
       </div>
     )
