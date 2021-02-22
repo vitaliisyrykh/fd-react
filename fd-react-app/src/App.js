@@ -1,7 +1,7 @@
-import React from 'react'
-import './App.css'
-import UserList from './components/user-list'
-import StopWatch from './components/stop-watch/index'
+import React from 'react';
+import './App.css';
+import UserList from './components/user-list';
+import StopWatch from './components/stop-watch/index';
 
 class App extends React.Component {
   render () {
@@ -9,8 +9,8 @@ class App extends React.Component {
       <>
         <StopWatch />
       </>
-    )
+    );
   }
 }
 
-export default App
+export default App;
