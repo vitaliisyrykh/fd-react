@@ -1,6 +1,7 @@
 .nav{
   display:flex;
   justify-content:center;
+  list-style:none;
 }
 .nav>li{
   padding: 15px;
