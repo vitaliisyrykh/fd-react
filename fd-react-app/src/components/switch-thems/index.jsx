@@ -7,12 +7,14 @@ import styles from './switch-thems.module.scss';
 const SomePage = props => {
   const [isWhite, setIsWhite] = useContext(switchThems);
 
-const classNames = cx(
- {styles.whiteThem: isWhite},
+const classNames = cx({
+  [styles.whiteThem]: isWhite,
+  [styles.blackThem]: !isWhite
+}
 );
   
   return (
-    <div>
+    <div className={classNames}>
       <h1>Some Page</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam expedita
