@@ -6,6 +6,7 @@ const SideBar = props => {
 
   const sideBarRendering = value => {
     const {img, name, lastName} = value;
+    console.log(img);
     return (
       <div>
           <img alt="userAvatar" src={img}/>

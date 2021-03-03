@@ -1,6 +1,6 @@
 //import React, { Component } from 'react';
 
-/* class StopWatch extends Component {
+ class StopWatch extends Component {
   constructor(props) {
     super(props);
     this.intervalId = null;
@@ -9,50 +9,33 @@
       isRunning : false ,
     }
   };
- */
- /*  tick = () => {
+   tick = () => {
     const { time } = this.state;
     time.setSeconds(time.getSeconds() + 1);
     this.setState({ time });
-  }; */
-
-  /* start = () => {
-    
+  }; 
+   start = () => {
       this.intervalId = setTimeout(this.tick, 1000);
-    
   };
-
   stop = () => {
     clearTimeout(this.intervalId);
     this.intervalId = null;
   };
- */
-  /* reset = () => {
+   reset = () => {
     this.stop();
     this.setState({ time: new Date(0, 0, 0, 0, 0, 0, 0) });
-  }; */
-  /* 
-    AFTER FIRST RENDER
-  */
-  /* componentDidMount() {
+  }; 
+   componentDidMount() {
     this.start();
   }
- */
-  /* 
-    AFTER EACH RENDER
-  */
-  /* componentDidUpdate() {
+   componentDidUpdate() {
     this.start()
-  } */
-
-  /* 
-    BEFORE UNMOUNT
-  */
-  /* componentWillUnmount() {
+  } 
+   componentWillUnmount() {
     this.stop();
-  } */
+  } 
 
-  /* render() {
+   render() {
     const { time } = this.state;
     return (
       <article>
@@ -80,7 +63,7 @@
         </button>
       </article>
     );
-  } */
+  } 
 }
 
 //export default StopWatch;
