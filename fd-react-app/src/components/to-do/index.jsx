@@ -20,14 +20,21 @@ const ToDos = props => {
       isDone:false,
     };
     setUserToDo([...userToDoArray, newToDo])
-    console.log(values);
-  } 
+  } ;
+
+  const del = (e) =>{
+      const newUserToDo = userToDoArray.filter(i=> console.log(e));
+      //console.log(newUserToDo);
+  }
+
   return(
     <section>
       <Header/>
-      
-       <FormToDo onSubmit = {onSubmit} /> 
-       <TasksList userToDoArray={userToDoArray}/>
+      <FormToDo onSubmit = {onSubmit} /> 
+       <ul>
+        <TasksList userToDoArray={userToDoArray} del={del}/>
+       </ul>
+
     </section>
   )
 }
