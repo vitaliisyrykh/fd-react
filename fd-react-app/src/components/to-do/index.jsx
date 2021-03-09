@@ -1,11 +1,35 @@
-import React from 'react';
+import React, {useState}from 'react';
+import Header from './header';
+import FormToDo from './form';
+//import Tasks from './tasks';
 
 
-const ToDo = props => {
+const ToDos = props => {
+  const [userToDo, setUserToDo]=useState([
+    {
+      id:Date.now(),
+      todoBody:'',
+      isDone:false,
+  
+  }]);
+
+ const onSubmit=(values) =>{
+    const newToDo = {
+      todoBody : values.todoBody,
+      id:Date.now(),
+      isDone:false,
+    };
+    setUserToDo([...userToDo, newToDo])
+    console.log(values);
+  } 
   return(
     <section>
       <Header/>
-      <Notes/>
+      
+       <FormToDo onSubmit = {onSubmit} /> 
+      {/* <Tasks/> */}
     </section>
   )
 }
+
+export default ToDos;
