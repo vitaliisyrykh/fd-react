@@ -3,7 +3,7 @@ import {Formik,Form, Field} from 'formik';
 
 const FormTodo = props => {
   const {onSubmit} = props;
- const ininitialValues  = {
+ const initialValues  = {
    todoBody :'',
  };
 
@@ -13,7 +13,7 @@ const FormTodo = props => {
   return(
     <div>  
       
-      <Formik  ininitialValues ={ininitialValues} onSubmit = {onSubmit}  >
+      <Formik  initialValues ={initialValues} onSubmit = {onSubmit}  >
         <Form>
           <Field name="todoBody" type="text" placeholder="enter text" />
           <Field name="submit" value="Add task" type="submit"/>

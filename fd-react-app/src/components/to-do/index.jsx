@@ -1,11 +1,11 @@
 import React, {useState}from 'react';
 import Header from './header';
 import FormToDo from './form';
-//import Tasks from './tasks';
+import TasksList from './tasks';
 
 
 const ToDos = props => {
-  const [userToDo, setUserToDo]=useState([
+  const [userToDoArray, setUserToDo]=useState([
     {
       id:Date.now(),
       todoBody:'',
@@ -19,7 +19,7 @@ const ToDos = props => {
       id:Date.now(),
       isDone:false,
     };
-    setUserToDo([...userToDo, newToDo])
+    setUserToDo([...userToDoArray, newToDo])
     console.log(values);
   } 
   return(
@@ -27,7 +27,7 @@ const ToDos = props => {
       <Header/>
       
        <FormToDo onSubmit = {onSubmit} /> 
-      {/* <Tasks/> */}
+       <TasksList userToDoArray={userToDoArray}/>
     </section>
   )
 }

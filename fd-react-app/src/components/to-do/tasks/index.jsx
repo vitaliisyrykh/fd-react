@@ -1,13 +1,14 @@
 import React from 'react';
 
-const Tasks = props => {
+const TasksList = props => {
+  const userToDoArray= [props]
+  
   return(
-    <section>
-      
-      <div>
-
-      </div>
-      <button></button>
-    </section>
+    <ul>
+       {userToDoArray.map(i=>{
+          return <li key={i.id}>{i.todoBody}</li>
+      })} 
+    </ul>
   )
 }
+export default TasksList;
