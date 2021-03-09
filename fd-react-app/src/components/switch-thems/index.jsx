@@ -25,4 +25,5 @@ const classNames = cx({
     </div>
   );
 };
+
 export default SomePage;

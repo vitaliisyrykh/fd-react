@@ -1,0 +1,26 @@
+.containerMenu{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position:fixed;
+  width: 150px;
+  top: 0;
+  bottom: 0;
+  left: -150px;
+}
+
+.open{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position:fixed;
+  width: 150px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.forBtn{
+  margin-top: 50px;
+  margin-left: 100px;
+}
