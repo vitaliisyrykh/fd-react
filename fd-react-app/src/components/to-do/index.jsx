@@ -1,44 +1,42 @@
-import React, {useState}from 'react';
-import Header from './header';
-import FormToDo from './form';
-import TasksList from './tasks';
-
+import React, { useState } from 'react'
+import Header from './header'
+import FormToDo from './form'
+import TasksList from './tasks'
 
 const ToDos = props => {
-  const [userToDoArray, setUserToDo]=useState([
+  const [userToDoArray, setUserToDo] = useState([
     {
-      id:Date.now(),
-      todoBody:'',
-      isDone:false,
-  
-  }]);
+      id: Date.now(),
+      todoBody: '',
+      isDone: false
+    }
+  ])
 
- const onSubmit=(values) =>{
+  const onSubmit = values => {
     const newToDo = {
-      todoBody : values.todoBody,
-      id:Date.now(),
-      isDone:false,
-    };
+      todoBody: values.todoBody,
+      id: Date.now(),
+      isDone: false
+    }
     setUserToDo([...userToDoArray, newToDo])
-  } ;
-  
-
-  const del = (id) =>{
-
-      const newUserToDo = userToDoArray.filter(i=> i.id !== id);
-      setUserToDo([...newUserToDo]);
   }
 
-  return(
-    <section>
-      <Header/>
-      <FormToDo onSubmit = {onSubmit} /> 
-       <ul>
-        <TasksList userToDoArray={userToDoArray} del={del}/>
-       </ul>
+  const del = id => {
+    const newUserToDo = userToDoArray.filter(i => i.id !== id)
+    setUserToDo([...newUserToDo])
+  }
+  const isDoneSubmit=(isDone)=>{
+    
+    console.log(userToDoArray);
+  }
 
+  return (
+    <section>
+      <Header />
+      <FormToDo onSubmit={onSubmit} />
+      <TasksList userToDoArray={userToDoArray} del={del} isDone = {isDoneSubmit} />
     </section>
   )
 }
 
-export default ToDos;
+export default ToDos
