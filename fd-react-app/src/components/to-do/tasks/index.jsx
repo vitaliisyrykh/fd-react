@@ -7,7 +7,7 @@ const TasksList = props => {
     <>
        {userToDoArray.map(i=>{
          
-          return <li key={i.id}>{i.todoBody}<button key={i.id} onClick={del}>Del</button></li>
+          return <li key={i.id}>{i.todoBody}<button key={i.id} onClick={() =>del(i.id)}>Del</button></li>
       })} 
     </>
   )

@@ -21,10 +21,12 @@ const ToDos = props => {
     };
     setUserToDo([...userToDoArray, newToDo])
   } ;
+  
 
-  const del = (e) =>{
-      const newUserToDo = userToDoArray.filter(i=> console.log(e));
-      //console.log(newUserToDo);
+  const del = (id) =>{
+
+      const newUserToDo = userToDoArray.filter(i=> i.id !== id);
+      setUserToDo([...newUserToDo]);
   }
 
   return(

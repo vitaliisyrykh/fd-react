@@ -12,7 +12,7 @@ import './App.css';
 //import SomePage from './components/switch-thems';
 //import Menu from './components/newMenu';
 //import styles from './components/newMenu/newMenu.module.scss';
-import Todos from './components/to-do'
+import Todos from './components/To-do'
 
 const App = props => {
  
