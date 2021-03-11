@@ -25,16 +25,22 @@ const ToDos = props => {
     const newUserToDo = userToDoArray.filter(i => i.id !== id)
     setUserToDo([...newUserToDo])
   }
-  const isDoneSubmit=(isDone)=>{
-    
-    console.log(userToDoArray);
+  const isDoneSubmit = id => {
+    const newArrTasks = userToDoArray.map(task => {
+      return task.id === id ? { ...task, isDone: !task.isDone } : task
+    })
+    setUserToDo([...newArrTasks])
   }
 
   return (
     <section>
       <Header />
       <FormToDo onSubmit={onSubmit} />
-      <TasksList userToDoArray={userToDoArray} del={del} isDone = {isDoneSubmit} />
+      <TasksList
+        userToDoArray={userToDoArray}
+        del={del}
+        isDone={isDoneSubmit}
+      />
     </section>
   )
 }

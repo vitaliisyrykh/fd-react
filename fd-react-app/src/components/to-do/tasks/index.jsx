@@ -1,15 +1,24 @@
-import React from 'react';
+import React from 'react'
 
 const TasksList = props => {
-  const {userToDoArray, del}= props
-  console.log(userToDoArray);
-  return(
+  const { userToDoArray, del,isDone } = props
+  console.log(userToDoArray)
+  return (
     <>
-       {userToDoArray.map(i=>{
-         
-          return <li key={i.id}>{i.todoBody}<button key={i.id} onClick={() =>del(i.id)}>Del</button></li>
-      })} 
+      {userToDoArray.map(task => {
+        return (
+          <li key={task.id}>
+            {task.todoBody}
+            <button key={task.id} onClick={() => del(task.id)}>
+              Del
+            </button>
+            <button key={task.id} onClick={() =>isDone(task.id)}>
+              Done
+            </button>
+          </li>
+        )
+      })}
     </>
   )
 }
-export default TasksList;
+export default TasksList
